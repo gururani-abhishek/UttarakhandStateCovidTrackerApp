@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">UttarakhandCovidTracker</string>
+    <string name="vaccinated">Vaccinated</string>
+    <string name="HeadingOfMainActivity">Uttarakhand Covid-19 data</string>
+</resources>
