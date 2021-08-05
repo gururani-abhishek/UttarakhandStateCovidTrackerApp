@@ -1,5 +1,6 @@
 package org.example.uttarakhandcovidtracker
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -8,6 +9,7 @@ import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -34,13 +36,13 @@ class MainActivity : AppCompatActivity() {
                 val recoveredCases = UTjsonObject.getString("recovered")
                 val lastUpdatedAt = UTjsonObject.getString("lastupdatedtime")
 
-                confirmedT.text = "confirmed : $confirmedCases"
-                deceasedT.text = "deaths :  $deceasedCases"
-                activeT.text = "active : $activeCases"
-                deltaConfirmedT.text = "delta confirmed : $deltaconfirmedCases"
-                deltaDeathsT.text = "delta deaths : $deltaDeceasedCases"
-                recoveredT.text = "recovered : $recoveredCases"
-                updateTimeT.text = "updated on : $lastUpdatedAt"
+                confirmedT.text = "कंफर्म मामले : $confirmedCases"
+                deceasedT.text = "कुल मौतें : $deceasedCases"
+                activeT.text = "सक्रिय मामले : $activeCases"
+                deltaConfirmedT.text = "delta कंफर्म मामले : $deltaconfirmedCases"
+                deltaDeathsT.text = "delta कुल मौतें : $deltaDeceasedCases"
+                recoveredT.text = "कुल ठीक हो चुके : $recoveredCases"
+                updateTimeT.text = "updated : $lastUpdatedAt"
             },
             {
                 Toast.makeText(this, "Error in the hood boys!", Toast.LENGTH_SHORT).show()
