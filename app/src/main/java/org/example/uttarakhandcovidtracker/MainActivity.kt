@@ -55,4 +55,12 @@ class MainActivity : AppCompatActivity() {
         )
         MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
     }
+
+    override fun onResume() {
+        super.onResume()
+        val decorView = window.decorView
+        val uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN
+        decorView.systemUiVisibility = uiOptions
+
+    }
 }
