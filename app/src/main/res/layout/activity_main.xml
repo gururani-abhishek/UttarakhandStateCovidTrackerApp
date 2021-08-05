@@ -40,7 +40,7 @@
         android:padding="5dp"
         />
     <TextView
-        android:id="@+id/otherT"
+        android:id="@+id/activeT"
         android:layout_marginTop="10dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -50,54 +50,41 @@
         android:padding="5dp"
         />
     <TextView
-        android:id="@+id/testedT"
+        android:id="@+id/DeltaConfirmedT"
         android:layout_marginTop="10dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/otherT"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:padding="5dp"
-        />
-    <TextView
-        android:id="@+id/vaccinationHeadingT"
-        android:layout_marginTop="10dp"
-        android:text="@string/vaccinated"
-        android:textSize="20sp"
-        android:fontFamily="sans-serif-black"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/testedT"
+        app:layout_constraintTop_toBottomOf="@+id/activeT"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:padding="5dp"
         />
 
     <TextView
-        android:id="@+id/singledoseT"
+        android:id="@+id/DeltaDeathsT"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:padding="5dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vaccinationHeadingT" />
+        app:layout_constraintTop_toBottomOf="@+id/DeltaConfirmedT" />
     <TextView
-        android:id="@+id/bothdoseT"
+        android:id="@+id/RecoveredT"
         android:layout_marginTop="10dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/singledoseT"
+        app:layout_constraintTop_toBottomOf="@+id/DeltaDeathsT"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:padding="5dp"
         />
     <TextView
-        android:id="@+id/recoveredT"
+        android:id="@+id/UpdatedTimeT"
         android:layout_marginTop="10dp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/bothdoseT"
+        app:layout_constraintTop_toBottomOf="@+id/RecoveredT"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:padding="5dp"
