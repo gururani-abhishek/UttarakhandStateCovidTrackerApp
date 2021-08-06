@@ -1,6 +1,7 @@
 package org.example.uttarakhandcovidtracker
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,15 +10,12 @@ import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 
-class MainActivity : AppCompatActivity() {
+class StateDataActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val decorView = window.decorView
-        val uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN
-        decorView.systemUiVisibility = uiOptions
 
         val confirmedT = findViewById<TextView>(R.id.confirmedT)
         val deceasedT = findViewById<TextView>(R.id.deceasedT)
@@ -56,11 +54,9 @@ class MainActivity : AppCompatActivity() {
         MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
     }
 
-    override fun onResume() {
-        super.onResume()
-        val decorView = window.decorView
-        val uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN
-        decorView.systemUiVisibility = uiOptions
-
+    fun DistrictWiseDataPressed(view: View) {
+        val intent = Intent(this, DistrictDataActivity::class.java)
+        startActivity(intent)
     }
+
 }

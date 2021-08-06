@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">UttarakhandCovidTracker</string>
     <string name="HeadingOfMainActivity">Uttarakhand Covid-19 data</string>
+    <string name="Districtwisedata">जिलेवार आंकड़े</string>
 </resources>
