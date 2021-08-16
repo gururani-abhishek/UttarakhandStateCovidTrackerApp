@@ -12,7 +12,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 
 class DistrictDataActivity : AppCompatActivity() {
     private lateinit var mAdapter : DistrictDataAdapter
-    val string = arrayListOf<String>("Almora", "Bageshwar", "Chamoli", "Champawat", "Dehradun", "Haridwar", "Nainital", "Pauri Garhwal", "Pithoragarh", "Rudraprayag", "Tehri Garhwal", "Udham Singh Nagar", "Uttarkashi")
+    val string = arrayListOf("Almora", "Bageshwar", "Chamoli", "Champawat", "Dehradun", "Haridwar", "Nainital", "Pauri Garhwal", "Pithoragarh", "Rudraprayag", "Tehri Garhwal", "Udham Singh Nagar", "Uttarkashi")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
