@@ -16,16 +16,18 @@ class DistrictDataAdapter: RecyclerView.Adapter<DistrictDataViewHolder>() {
 
     override fun onBindViewHolder(holder: DistrictDataViewHolder, position: Int) {
         val currentItem = items[position]
-        val a = currentItem.active
+        val a = currentItem.tested
         val c = currentItem.confirmed
         val d = currentItem.deceased
         val r = currentItem.recovered
+        val p = currentItem.population
 
         holder.district.text = currentItem.district_name
-        holder.active.text = "सक्रिय मामले : $a"
+        holder.tested.text = "नमूने जांचे गए : $a"
         holder.confirmed.text = "कंफर्म मामले : $c "
         holder.deceased.text = "कुल मौतें: $d"
         holder.recovered.text = "कुल ठीक हो चुके: $r"
+        holder.population.text = "आबादी : $p"
     }
 
     override fun getItemCount(): Int {
@@ -44,8 +46,9 @@ class DistrictDataAdapter: RecyclerView.Adapter<DistrictDataViewHolder>() {
 
 class DistrictDataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val district: TextView = itemView.findViewById(R.id.district_name)
-    val active : TextView = itemView.findViewById(R.id.active)
+    val tested : TextView = itemView.findViewById(R.id.tested)
     val confirmed : TextView = itemView.findViewById(R.id.confirmed)
     val deceased  : TextView = itemView.findViewById(R.id.deceased)
     val recovered : TextView = itemView.findViewById(R.id.recovered)
+    val population : TextView = itemView.findViewById(R.id.population)
 }

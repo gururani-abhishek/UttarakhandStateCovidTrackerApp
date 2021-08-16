@@ -56,11 +56,10 @@
         app:layout_constraintTop_toBottomOf="@+id/confirmed" />
 
     <TextView
-        android:id="@+id/active"
+        android:id="@+id/tested"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:background="#F46E6E"
         android:fontFamily="serif"
         android:padding="5dp"
         android:shadowColor="@color/text_shadow"
@@ -89,7 +88,22 @@
         android:textSize="25sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/active" />
+        app:layout_constraintTop_toBottomOf="@+id/tested" />
 
+    <TextView
+        android:id="@+id/population"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="serif"
+        android:padding="5dp"
+        android:shadowColor="@color/text_shadow"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recovered" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
