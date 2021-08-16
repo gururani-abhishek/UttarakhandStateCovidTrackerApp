@@ -35,10 +35,12 @@ class StateDataActivity : AppCompatActivity() {
             val deltaConfirmedCases = delta21_14.getString("confirmed")
             val meta = stateDataObject.getJSONObject("meta")
             val lastUpdatedAt = meta.getString("last_updated")
-            updateTimeT.text = "updated : $lastUpdatedAt"
+                val x = ", "
+                val timeInStandard = lastUpdatedAt.substring(0, 10) + x + lastUpdatedAt.substring(11, lastUpdatedAt.length)
+
+            updateTimeT.text = "updated : $timeInStandard"
             val total = stateDataObject.getJSONObject("total")
 
-            //val notes = meta.getJSONObject("notes")
                 val population =  meta.getString("population")
                 populationT.text = "आबादी : $population"
             val confirmedCases = total.getString("confirmed")
