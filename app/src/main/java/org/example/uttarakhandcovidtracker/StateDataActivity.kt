@@ -19,33 +19,43 @@ class StateDataActivity : AppCompatActivity() {
 
         val confirmedT = findViewById<TextView>(R.id.confirmedT)
         val deceasedT = findViewById<TextView>(R.id.deceasedT)
-        val activeT = findViewById<TextView>(R.id.activeT)
+        val testedT = findViewById<TextView>(R.id.testedT)
         val deltaConfirmedT = findViewById<TextView>(R.id.DeltaConfirmedT)
-        val deltaDeathsT = findViewById<TextView>(R.id.DeltaDeathsT)
+        val populationT = findViewById<TextView>(R.id.PopulationT)
         val recoveredT = findViewById<TextView>(R.id.RecoveredT)
         val updateTimeT = findViewById<TextView>(R.id.UpdatedTimeT)
 
-        val url = "https://api.covid19india.org/data.json"
+        val url = "https://data.covid19india.org/v4/min/data.min.json"
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
             {
-                val statewiseDataArray = it.getJSONArray("statewise")
-                val UTjsonObject = statewiseDataArray.getJSONObject(36)
-                val confirmedCases = UTjsonObject.getString("confirmed")
-                val activeCases = UTjsonObject.getString("active")
-                val deceasedCases = UTjsonObject.getString("deaths")
-                val deltaconfirmedCases = UTjsonObject.getString("deltaconfirmed")
-                val deltaDeceasedCases = UTjsonObject.getString("deltadeaths")
-                val recoveredCases = UTjsonObject.getString("recovered")
-                val lastUpdatedAt = UTjsonObject.getString("lastupdatedtime")
+
+            val stateDataObject = it.getJSONObject("UT")
+            val delta21_14 = stateDataObject.getJSONObject("delta21_14")
+            val deltaConfirmedCases = delta21_14.getString("confirmed")
+            val meta = stateDataObject.getJSONObject("meta")
+            val lastUpdatedAt = meta.getString("last_updated")
+            updateTimeT.text = "updated : $lastUpdatedAt"
+            val total = stateDataObject.getJSONObject("total")
+
+            //val notes = meta.getJSONObject("notes")
+                val population =  meta.getString("population")
+                populationT.text = "आबादी : $population"
+            val confirmedCases = total.getString("confirmed")
+            val deceasedCases = total.getString("deceased")
+            val recoveredCases = total.getString("recovered")
+            val tested = total.getString("tested")
+
+
+
 
                 confirmedT.text = "कंफर्म मामले : $confirmedCases"
                 deceasedT.text = "कुल मौतें : $deceasedCases"
-                activeT.text = "सक्रिय मामले : $activeCases"
-                deltaConfirmedT.text = "delta कंफर्म मामले : $deltaconfirmedCases"
-                deltaDeathsT.text = "delta कुल मौतें : $deltaDeceasedCases"
+                testedT.text = "नमूने जांचे गए : $tested"
+                deltaConfirmedT.text = "delta कंफर्म मामले : $deltaConfirmedCases"
                 recoveredT.text = "कुल ठीक हो चुके : $recoveredCases"
-                updateTimeT.text = "updated : $lastUpdatedAt"
+                deltaConfirmedT.text = "delta कंफर्म मामले : $deltaConfirmedCases"
+
             },
             {
                 Toast.makeText(this, "Error in the hood boys!", Toast.LENGTH_SHORT).show()

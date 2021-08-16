@@ -17,7 +17,7 @@ class DistrictDataActivity : AppCompatActivity() {
         setContentView(R.layout.activity_district_data)
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val items = fetchData()
+        fetchData()
         mAdapter = DistrictDataAdapter()
         recyclerView.adapter = mAdapter
     }
